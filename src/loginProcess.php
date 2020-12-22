@@ -14,17 +14,18 @@ $conn= mysqli_connect("localhost","root","",$dbname);
 $_SESSION['id']= $logid;
 
 //queries
-$sql= "SELECT userId, pass, isAdmin FROM $tblname WHERE userId='$logid'";
+$sql= "SELECT * FROM $tblname WHERE uid = '$logid'";
 
 
 $result= mysqli_query($conn, $sql);
 $row= mysqli_fetch_array($result);
+$_SESSION['usrName']= $row['name'];
 
 
-if($row['pass']==$logpass && $row['isAdmin']!="admin"){
-  header("Location:empView.php");
+if($row['pass']==$logpass && $row['post']!="admin"){
+  header("Location:empView.php?id=$row[uid]");
 }
-else if($row['pass']==$logpass && $row['isAdmin']=="admin"){
+else if($row['pass']==$logpass && $row['post']=="admin"){
   header("Location:adminView.php");
 }
 else{
