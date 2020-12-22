@@ -1,19 +1,17 @@
 <?php
 // connect to database
-$dbname= "pizzabhai";
-$tblname= "emplist";
-$con=mysqli_connect("localhost","root","",$dbname);
+$con=mysqli_connect("localhost","root","","dbstudentinfo");
 
 // Downloads files
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
    // fetch file to download from database
-   $sql ="SELECT * FROM $tblname WHERE uid = '$id'";
+   $sql ="SELECT * FROM tbl1 WHERE id = $id";
     $result = mysqli_query($con, $sql);
 
     $row = mysqli_fetch_assoc($result);
-    $filepath =$row['photo'];
+    $filepath = 'upload/' . $row['photo'];
 
     if (file_exists($filepath)) {
         header('Content-Description: File Transfer');
@@ -22,8 +20,9 @@ if (isset($_GET['id'])) {
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
-        header('Content-Length: ' . filesize($row['photo']));
-        readfile($row['photo']);
+        header('Content-Length: ' . filesize('upload/' . $row['photo']));
+        readfile('upload/' . $row['photo']);
+        header('Location: dashboard.php');
         exit;
     }
 }

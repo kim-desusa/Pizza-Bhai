@@ -32,10 +32,10 @@ $row= mysqli_fetch_assoc($result1);
       </div>
       <div class="middle">
         <div class="photo-section">
-          <a href="downloadProcess.php?id=<?php echo $getid;?>">
+          <a href="downloadProcess.php?id=<?php echo $getid;?>&post=<?php echo $row['post'];?>">
           <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <a href="editProcess.php" class="button">Edit</a>
+          <a href="edit.php" class="button">Edit</a>
         </div>
         <div class="data-section">
           <h1><?php echo $row['name']; ?></h1>
