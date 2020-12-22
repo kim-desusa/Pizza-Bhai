@@ -14,7 +14,7 @@
 <div>
   <?php
   if(isset($_POST['create'])){
-    echo "User Submitted.";
+    header("Location:index.php");
   }
   ?>
 </div>
@@ -27,7 +27,7 @@
     <p>Fill up the form with correct values.</p>
 <table>
   <tr>
-    <td> <label for="userid"><b>User Id: </b></label> </td>
+    <td> <label for="userid"><b>Username: </b></label> </td>
     <td><input type="text" name="userid" required
     placeholder="Enter Your User Id"></td>
   </tr> 
@@ -90,14 +90,14 @@
 
   <tr>  
     <td><label for="gender"><b>Gender: </b></label></td>
-    <td><input type="radio" name="gender" value="Male">Male
-    
-<input type="radio" name="gender" value="Female">Female
-    <input type="radio" name="gender" value="other">Other
+    <td>
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female
+      <input type="radio" name="gender" value="other">Other
     </td>
   </tr>
   <tr>           
-    <td><label for="date"><b>Date: </b></label></td>
+    <td><label for="date"><b>Birth Date: </b></label></td>
     <td><input type="Date" name="date"></td>
   </tr>  
 

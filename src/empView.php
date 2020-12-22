@@ -35,7 +35,7 @@ $row= mysqli_fetch_assoc($result1);
           <a href="downloadProcess.php?id=<?php echo $getid;?>">
           <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <a href="" class="button">Edit</a>
+          <a href="editProcess.php" class="button">Edit</a>
         </div>
         <div class="data-section">
           <h1><?php echo $row['name']; ?></h1>
