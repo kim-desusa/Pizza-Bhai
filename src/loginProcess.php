@@ -22,10 +22,10 @@ $row= mysqli_fetch_array($result);
 $_SESSION['usrName']= $row['name'];
 
 
-if($row['pass']==$logpass && $row['post']!="admin"){
+if($row['pass']==$logpass && strtolower($row['post'])!="admin"){
   header("Location:empView.php?id=$row[uid]");
 }
-else if($row['pass']==$logpass && $row['post']=="admin"){
+else if($row['pass']==$logpass && strtolower($row['post'])=="admin"){
   header("Location:adminView.php");
 }
 else{
