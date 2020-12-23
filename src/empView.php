@@ -7,7 +7,7 @@ if(isset($_SESSION['id'])==Null){
 $dbname= "pizzabhai";
 $tblname= "emplist";
 $conn= mysqli_connect("localhost", "root","",$dbname);
-
+$getid = $_GET['id'];
 $id= $_SESSION['id'];
 $name= $_SESSION['usrName'];
 $pagename = $name;
@@ -32,10 +32,10 @@ $row= mysqli_fetch_assoc($result1);
       </div>
       <div class="middle">
         <div class="photo-section">
-          <a href="downloadProcess.php">
+          <a href="downloadProcess.php?id=<?php echo $getid;?>&post=<?php echo $row['post'];?>">
           <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <a href="" class="button">Edit</a>
+          <a href="edit.php" class="button">Edit</a>
         </div>
         <div class="data-section">
           <h1><?php echo $row['name']; ?></h1>
@@ -43,7 +43,7 @@ $row= mysqli_fetch_assoc($result1);
           <h2>Personal Details</h2>
           <table>
             <tr>
-              <td>Em@ail</td>
+              <td>Em@il</td>
               <td><?php echo $row['email']; ?></td>
             </tr>
             <tr>

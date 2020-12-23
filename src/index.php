@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <div class="navbar">
-    <div class="logo"><img src="PizzaBhai.png" alt="logo" srcset=""></div>
+    <div class="logo"><img src="images/PizzaBhai.png" alt="logo" srcset=""></div>
             <div></div>
             <div><a class="button" href="regFrom.php">Register</a></div>
             
@@ -40,7 +40,7 @@
                       <input class="" type="submit" value="Login">
                       <?php
             if(isset($_SESSION['id'])){
-              echo "<span class=warnning-1 >Incorrect username or password.</span>";
+              echo "<h3 class=warnning-1 >Incorrect username or password.</h3>";
               session_destroy();
             }
           ?>
@@ -56,7 +56,7 @@
     <button><i class="fab fa-instagram"></i></button>
     <button><i class="fab fa-twitter"></i></button>
     </div>
-    <div>© 2019 , Pizza Hut Bangladesh. All rights reserved.</div>
+    <div>© 2020 , Pizza Bhai Bangladesh. All rights reserved.</div>
     <div>Developed By 53Batch, BU</div>
     </div>
   </div>
