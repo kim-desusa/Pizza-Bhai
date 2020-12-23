@@ -7,9 +7,10 @@ if(isset($_SESSION['id'])==Null){
 $dbname= "pizzabhai";
 $tblname= "emplist";
 $conn= mysqli_connect("localhost", "root","",$dbname);
-$getid = $_GET['id'];
+
 $id= $_SESSION['id'];
 $name= $_SESSION['usrName'];
+$getid = $_GET['id'];
 $pagename = $name;
 $sql1= "SELECT * FROM $tblname WHERE uid = '$id'";
 $result1= mysqli_query($conn, $sql1);
@@ -38,15 +39,15 @@ $row= mysqli_fetch_assoc($result1);
         <div><a class="button" href="logoutProcess.php">Logout</a></div>
       </div>
 
-
+      
     <div class="middle">
         <div class="personal-info-box">
         <div class="photo-section">
           <a href="downloadProcess.php">
             <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <a href="" class="button">Edit your profile</a>
-          <a href="">Delete</a>
+         <p>Click on the photo to download</p>
+          <a href="edit.php?id=<?php echo $id;?>" class="button-sp">Edit your profile</a>
         </div>
         <div class="data-section">
             <h1><?php echo $row['name']; ?></h1>
