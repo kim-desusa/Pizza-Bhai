@@ -34,9 +34,9 @@ $row= mysqli_fetch_assoc($result1);
     <div class="container">
 
       <div class="navbar">
-        <div class="logo"><img src="images/PizzaBhai.png" alt="logo" srcset=""></div>
+        <div class="logo"><img src="PizzaBhai.png" alt="logo" srcset=""></div>
         <div></div>
-        <div><a class="button" href="logoutProcess.php">Log Out</a></div>
+        <div><a class="button" href="logoutProcess.php">Logout</a></div>
       </div>
 
 
@@ -46,8 +46,8 @@ $row= mysqli_fetch_assoc($result1);
           <a href="downloadProcess.php?id=<?php echo $getid;?>&post=<?php echo $row['post'];?>">
             <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <p>Click on the photo to download</p>
-          <a href="edit.php" class="button-sp">Edit your profile</a>
+          <a href="edit.php" class="button">Edit your profile</a>
+          <a href="">Delete</a>
         </div>
         <div class="data-section">
             <h1><?php echo $row['name']; ?></h1>
@@ -90,9 +90,11 @@ $row= mysqli_fetch_assoc($result1);
       <button><i class="fab fa-instagram"></i></button>
       <button><i class="fab fa-twitter"></i></button>
       </div>
-      <div>© 2020 , Pizza Bhai. All rights reserved.</div>
+      <div>© 2019 , Pizza Bhai. All rights reserved.</div>
       <div>Developed by 53batch, BU</div>
       </div>
+
+
     </div>
 </body>
 </html>
