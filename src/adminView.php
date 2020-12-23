@@ -15,7 +15,7 @@ $sql1= "SELECT * FROM $tblname WHERE uid = '$id'";
 $result1 = mysqli_query($conn, $sql1);
 $adminData= mysqli_fetch_array($result1);
 
-$_SESSION['post']= "admin"; 
+$_SESSION['post']= "admin";
 $sql2= "SELECT * FROM $tblname";
 $result2= mysqli_query($conn, $sql2);
 ?>
