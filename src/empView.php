@@ -47,7 +47,7 @@ $row= mysqli_fetch_assoc($result1);
             <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
           <p>Click on the photo to download</p>
-          <a href="edit.php" class="button-sp">Edit your profile</a>
+          <a href="edit.php?id=<?php echo $id;?>" class="button-sp">Edit your profile</a>
         </div>
         <div class="data-section">
             <h1><?php echo $row['name']; ?></h1>
