@@ -19,6 +19,10 @@
   }
   ?>
 </div>
+  <div class="nav-bar">
+      <img src="images/PizzaBhai.png" alt="">
+      <a href="index.php">Cancel</a>
+  </div>
   <div class="box">
 
     <form action="regProcess.php" method="post"enctype="multipart/form-data">
