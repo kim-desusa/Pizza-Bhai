@@ -55,7 +55,7 @@ $row= mysqli_fetch_assoc($result1);
           <h2>Personal Details</h2>
           <table>
             <tr>
-              <td>Em@ail:</td>
+              <td>Em@il:</td>
               <td><?php echo $row['email']; ?></td>
               <td>Phone Number:</td>
               <td><?php echo $row['phn']; ?></td>
