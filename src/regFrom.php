@@ -50,7 +50,7 @@
   </tr>
 
   <tr>  
-    <td><label for="email"><b>Email Address </b></label></td>
+    <td><label for="email"><b>Email </b></label></td>
     <td><input class="input-bar" type="email" name="email" required
     placeholder=""></td>
   </tr>
