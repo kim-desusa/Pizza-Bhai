@@ -20,59 +20,82 @@ $row= mysqli_fetch_assoc($result1);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php
-  echo "
-  <title>$pagename</title>
-  ";
-  ?>
+    <link rel="stylesheet" href="empViewStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <?php
+    echo "
+    <title>$pagename</title>
+    ";
+    ?>
+  
 </head>
 <body>
     <div class="container">
-      <div class="nav">
+
+      <div class="navbar">
+        <div class="logo"><img src="PizzaBhai.png" alt="logo" srcset=""></div>
+        <div></div>
+        <div><a class="button" href="logoutProcess.php">Logout</a></div>
       </div>
-      <div class="middle">
+
+
+    <div class="middle">
+        <div class="personal-info-box">
         <div class="photo-section">
-          <a href="downloadProcess.php?id=<?php echo $getid;?>&post=<?php echo $row['post'];?>">
-          <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
+          <a href="downloadProcess.php">
+            <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
-          <a href="edit.php" class="button">Edit</a>
+          <a href="" class="button">Edit your profile</a>
+          <a href="">Delete</a>
         </div>
         <div class="data-section">
-          <h1><?php echo $row['name']; ?></h1>
-          <h3><?php echo $row['post']; ?></h3>
+            <h1><?php echo $row['name']; ?></h1>
+            <h3><?php echo $row['post']; ?></h3>
           <h2>Personal Details</h2>
           <table>
             <tr>
-              <td>Em@il</td>
+              <td>Em@ail:</td>
               <td><?php echo $row['email']; ?></td>
-            </tr>
-            <tr>
-              <td>Phone Number</td>
+              <td>Phone Number:</td>
               <td><?php echo $row['phn']; ?></td>
             </tr>
             <tr>
-              <td>Birthday</td>
+              <td>Birthday:</td>
               <td><?php echo $row['date']; ?></td>
-            </tr>
-            <tr>
-              <td>Blood Group</td>
+              <td>Blood Group:</td>
               <td><?php echo $row['bg']; ?></td>
             </tr>
+            
             <tr>
-              <td>Gender</td>
+              <td>Gender:</td>
               <td><?php echo $row['gender']; ?></td>
-            </tr>
-            <tr>
-              <td>Address</td>
-              <td><?php echo $row['address']; ?></td>
-            </tr>
-            <tr>
-              <td>NID</td>
+              <td>NID:</td>
               <td><?php echo $row['nid']; ?></td>
+            </tr>
+            <tr>
+              
+              <td>Address:</td>
+              <td><?php echo $row['address']; ?></td>
+              
             </tr>
           </table>
         </div>
+     </div>
+    </div>
+        
+
+     
+      <div class="footer"><div>
+        Follow Us <br>
+      <button>  <i class="fab fa-facebook-f"></i></button>
+      <button><i class="fab fa-instagram"></i></button>
+      <button><i class="fab fa-twitter"></i></button>
       </div>
+      <div>© 2019 , Pizza Bhai. All rights reserved.</div>
+      <div>Developed by 53batch, BU</div>
+      </div>
+
+
     </div>
 </body>
 </html>
