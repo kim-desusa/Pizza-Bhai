@@ -32,7 +32,10 @@ $row= mysqli_fetch_assoc($result1);
       <div class="navbar">
         <div class="logo"><img src="images/PizzaBhai.png" alt="logo" srcset=""></div>
         <div></div>
-        <div><a class="button" href="logoutProcess.php">Log Out</a></div>
+        <div class="button-section">
+          <a class="sp-button" href="adminView.php">Home</a>
+          <a class="button" href="logoutProcess.php">LogOut</a>
+        </div>
       </div>
 
 

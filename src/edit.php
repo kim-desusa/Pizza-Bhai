@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION['id'])==Null){
+  session_destroy();
+  header("Location:index.php");
+}
 if(isset($_POST['create'])){
   header("Location:index.php");
 }
@@ -24,6 +28,14 @@ $row= mysqli_fetch_array($result);
 <body>
 <div class="nav-bar">
       <img src="images/PizzaBhai.png" alt="">
+      <a href="<?php
+        if(isset($_SESSION['post'])){
+          echo "adminEmpView.php?id=$id";
+        }
+        else{
+          echo "empView.php";
+        }
+      ?>">Cancel</a>
   </div>
   <div class="box top-margin">
 

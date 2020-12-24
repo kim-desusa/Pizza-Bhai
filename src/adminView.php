@@ -84,3 +84,6 @@ $result2= mysqli_query($conn, $sql2);
   </div>
 </body>
 </html>
+<?php
+$_SESSION['flag']= "flag";
+?>

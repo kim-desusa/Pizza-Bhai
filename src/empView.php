@@ -10,7 +10,6 @@ $conn= mysqli_connect("localhost", "root","",$dbname);
 
 $id= $_SESSION['id'];
 $name= $_SESSION['usrName'];
-$getid = $_GET['id'];
 $pagename = $name;
 $sql1= "SELECT * FROM $tblname WHERE uid = '$id'";
 $result1= mysqli_query($conn, $sql1);
@@ -36,14 +35,14 @@ $row= mysqli_fetch_assoc($result1);
       <div class="navbar">
         <div class="logo"><img src="images/PizzaBhai.png" alt="logo" srcset=""></div>
         <div></div>
-        <div><a class="button" href="logoutProcess.php">Log Out</a></div>
+        <div><a class="button" href="logoutProcess.php">LogOut</a></div>
       </div>
 
 
     <div class="middle">
         <div class="personal-info-box">
         <div class="photo-section">
-          <a href="downloadProcess.php?id=<?php echo $getid;?>&post=<?php echo $row['post'];?>">
+          <a href="downloadProcess.php?id=<?php echo $id;?>">
             <img src=<?php echo $row['photo']; ?> alt="ERROR 503">
           </a>
           <p>Click on the photo to download</p>
@@ -96,3 +95,6 @@ $row= mysqli_fetch_assoc($result1);
     </div>
 </body>
 </html>
+<?php
+$_SESSION['flag']= "flag";
+?>
